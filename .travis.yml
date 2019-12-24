@@ -1,16 +1,30 @@
-language: python
+# language: python
 
-python:
-  - "3.6"
+# python:
+#   - "3.6"
 
-cache:
-  directories:
-    - /home/travis/build/louiscklaw/ubuntu_respin/origin
+# cache:
+#   directories:
+#     - /home/travis/build/louiscklaw/ubuntu_respin/origin
 
-install:
-  - sudo apt update && sudo apt install -y git wget genisoimage bc squashfs-tools xorriso
-  - pip3 install pipenv
-  - pipenv install pip==18 fabric3 pychalk
+# install:
+#   - sudo apt update && sudo apt install -y git wget genisoimage bc squashfs-tools xorriso
+#   - pip3 install pipenv
+#   - pipenv install pip==18 fabric3 pychalk
+
+# script:
+#   - pipenv run fab helloworld
+
+# https://docs.travis-ci.com/user/docker/
+
+dist: bionic
+
+services:
+  - docker
+
+before_install:
+  - docker --version
+
 
 script:
-  - pipenv run fab helloworld
+  - docker build -t dell-xps-9560-ubuntu-respin .
