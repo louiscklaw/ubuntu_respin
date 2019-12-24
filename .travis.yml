@@ -28,3 +28,4 @@ before_install:
 
 script:
   - docker-build-image.sh
+  - docker-respin.sh origin/ubuntu-17.10.1-desktop-amd64.iso
