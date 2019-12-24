@@ -27,4 +27,4 @@ before_install:
 
 
 script:
-  - docker build -t dell-xps-9560-ubuntu-respin .
+  - docker-build-image.sh
