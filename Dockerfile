@@ -12,10 +12,10 @@ RUN mkdir /docker-input
 RUN mkdir /docker-output
 RUN mkdir /services
 
-COPY ./docker-entrypoint.sh /
-COPY ./build.sh /
-COPY ./wrapper-network.sh /
-COPY ./wrapper-nvidia.sh /
+COPY ./scripts/docker-entrypoint.sh /
+COPY ./scripts/build.sh /
+COPY ./scripts/wrapper-network.sh /
+COPY ./scripts/wrapper-nvidia.sh /
 COPY ./services/gpuoff.service /services/
 
 RUN chmod +x docker-entrypoint.sh

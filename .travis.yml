@@ -24,7 +24,8 @@ services:
 
 before_install:
   - docker --version
-  - sh ./docker-build-image.sh
+  - bash ./scripts/docker-build-image.sh
 
 script:
-  - sh ./docker-respin.sh origin/ubuntu-17.10.1-desktop-amd64.iso
+  - bash ./scripts/get_images.sh
+  - bash ./scripts/docker-respin.sh origin/ubuntu_1804.iso
