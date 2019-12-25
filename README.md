@@ -10,3 +10,5 @@
 
 - Test branch
 ![Travis (.org) branch](https://img.shields.io/travis/louiscklaw/ubuntu_respin/test/fix-scripts-directory)
+
+![DELL XPS 9560](https://github.com/stockmind/dell-xps-9560-ubuntu-respin/raw/master/screenshot.png)
