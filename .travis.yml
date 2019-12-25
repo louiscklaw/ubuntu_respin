@@ -36,7 +36,7 @@ after_success:
   - pip3 install --user pipenv
   - cd ./_utils
   - pipenv sync
-  - pipenv run python3 ./_utils/merge.py
+  - pipenv run python3 merge.py
 
 notifications:
   slack:
