@@ -9,39 +9,39 @@ KERNELARGS=" -u "
 GRUBOPTIONS="quiet splash acpi_rev_override=1"
 
 # Parse ARGS
-POSITIONAL=()
-while [[ $# -gt 0 ]]
-do
-key="$1"
+# POSITIONAL=()
+# while [[ $# -gt 0 ]]
+# do
+# key="$1"
 
-case $key in
-    -k|--kernel)
-    echo "Setting kernel version..."
-    KERNELVERSION="$2"
-    KERNELARGS=" --kernel $KERNELVERSION "
-    shift # past argument
-    shift # past value
-    ;;
-    -c|--compatibility)
-    echo "Setting compatibility..."
-    COMPATIBILITY="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    -d|--docker)
-    echo "Called from docker..."
-    INPUTFOLDER="/docker-input/"
-    shift # past argument
-    shift # past value
-    ;;
-    *)    # unknown option
-    POSITIONAL+=("$1") # save it in an array for later
-    shift # past argument
-    ;;
-esac
-done
-set -- "${POSITIONAL[@]}" # restore positional parameters
-# End args parsing
+# case $key in
+#     -k|--kernel)
+#     echo "Setting kernel version..."
+#     KERNELVERSION="$2"
+#     KERNELARGS=" --kernel $KERNELVERSION "
+#     shift # past argument
+#     shift # past value
+#     ;;
+#     -c|--compatibility)
+#     echo "Setting compatibility..."
+#     COMPATIBILITY="$2"
+#     shift # past argument
+#     shift # past value
+#     ;;
+#     -d|--docker)
+#     echo "Called from docker..."
+#     INPUTFOLDER="/docker-input/"
+#     shift # past argument
+#     shift # past value
+#     ;;
+#     *)    # unknown option
+#     POSITIONAL+=("$1") # save it in an array for later
+#     shift # past argument
+#     ;;
+# esac
+# done
+# set -- "${POSITIONAL[@]}" # restore positional parameters
+# # End args parsing
 
 # If missing, download latest version of the script that will respin the ISO
 if [ ! -f isorespin.sh ]; then
@@ -175,3 +175,8 @@ addrepos+="ppa:mystic-mirage/pycharm "
 	-g "$GRUBOPTIONS"
 
 # dd if=./linuxium-ubuntu-19.04-desktop-amd64.iso of=/dev/sdb bs=999M
+
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+
+mv linuxium-* "/docker-output/"
+mv isorespin.log "/docker-output/isorespin-$TIMESTAMP.log"
