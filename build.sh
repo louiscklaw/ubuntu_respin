@@ -111,8 +111,8 @@ installpackages+="git git-flow git-lfs "
 # installpackages+="pycharm-community "
 # installpackages+="slack-desktop "
 # installpackages+="spotify-client "
-# installpackages+="tmate "
-installpackages+="vscode "
+installpackages+="tmate "
+# installpackages+="vscode "
 
 # Packages that will be removed:
 #removepackages=""
