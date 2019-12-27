@@ -28,6 +28,7 @@ before_install:
 
 script:
   - bash ./_utils/build_all.sh
+  - cat isorespin.log
 
 after_success:
   - id
