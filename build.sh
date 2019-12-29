@@ -182,4 +182,4 @@ TIMESTAMP=$(date +"%Y%m%d%H%M%S")
 mv linuxium-* "/docker-output/"
 mv isorespin.log "/docker-output/isorespin-$TIMESTAMP.log"
 
-cat isorespin.log
+cat "/docker-output/isorespin-$TIMESTAMP.log"
