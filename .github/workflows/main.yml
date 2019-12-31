@@ -6,6 +6,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+
+    - name: build docker image
+      run: bash ./docker-build-image.sh
+
+    - name: build docker image
+      run: bash ./_utils/build_all.sh
+
     - name: Send message to Slack API
       uses: archive/github-actions-slack@master
       with:
