@@ -31,7 +31,7 @@ jobs:
     - stage: Build
       name: "build image"
       script:
-        - bash ./scripts/build_all.sh
+        - bash ./scripts/build_all.sh | tee build.log
         - cd ./_utils
         - sudo apt update
         - sudo apt install -y p7zip-full curl
@@ -48,6 +48,9 @@ after_success:
   - cd ./_utils
   - pipenv sync
   - pipenv run python3 merge.py
+
+after_failure:
+  - tail -500 build.log
 
 notifications:
   slack:
