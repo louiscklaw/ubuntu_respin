@@ -44,7 +44,7 @@ jobs:
         - pipenv sync
 
       script:
-        - pipenv run python3 transfer.py destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
+        - pipenv run python3 transfer.py $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
 
 
 
