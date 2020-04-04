@@ -17,6 +17,7 @@ if [ ! -f origin/ubuntu-18.04.4-desktop-amd64.iso ]; then
     echo 'download image'
     bash ./scripts/get_images.sh
 else
+    # iso image file found
     echo 'skip download image'
 fi
 

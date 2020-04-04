@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-set -ex
+set -x
 
-wget -qO origin/ubuntu_1804.iso http://releases.ubuntu.com/18.04/ubuntu-18.04.3-desktop-amd64.iso
+wget -qO origin/ubuntu-18.04.4-desktop-amd64.iso http://releases.ubuntu.com/18.04/ubuntu-18.04.4-desktop-amd64.iso
+
+md5sum origin/ubuntu-18.04.4-desktop-amd64.iso
