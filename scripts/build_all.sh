@@ -10,16 +10,17 @@ docker --version
 # docker kill dell-xps-9560-ubuntu-respin-container
 
 # bash ./_utils/get_images.sh
-bash docker-build-image.sh
+bash ./scripts/docker-build-image.sh
+
 
 if [ ! -f origin/ubuntu-18.04.4-desktop-amd64.iso ]; then
     echo 'download image'
-    bash ./_utils/get_images.sh
+    bash ./scripts/get_images.sh
 else
     echo 'skip download image'
 fi
 
-cp /home/logic/_workspace/ubuntu_respin/_utils/build_all.sh /home/logic/_workspace/ubuntu_respin/isorespin.sh /home/logic/_workspace/ubuntu_respin/origin/
+cp ./scripts/build_all.sh ./scripts/isorespin.sh /home/logic/_workspace/ubuntu_respin/origin/
 
 docker run -t --rm --cap-add MKNOD \
     -v $PWD/origin:/docker-input \
