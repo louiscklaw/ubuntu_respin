@@ -27,7 +27,7 @@ before_install:
   - bash ./docker-build-image.sh
 
 script:
-  - bash ./_utils/build_all.sh
+  - bash ./scripts/build_all.sh
 
 after_success:
   - id
