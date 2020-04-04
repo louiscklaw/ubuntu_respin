@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker build -t dell-xps-9560-ubuntu-respin .
+set -ex
+
+docker build -t logickee/dell-xps-9560-ubuntu-respin .

@@ -3,7 +3,12 @@ FROM ubuntu:18.04
 MAINTAINER Simone Roberto Nunzi "simone.roberto.nunzi@gmail.com"
 
 # Install required software
-RUN apt-get update && apt-get install -y build-essential sudo git wget zip genisoimage bc squashfs-tools xorriso tar klibc-utils iproute2 dosfstools rsync unzip findutils iputils-ping grep
+RUN apt-get update
+
+RUN apt-get install -y build-essential sudo git wget zip genisoimage bc squashfs-tools xorriso tar klibc-utils iproute2 dosfstools rsync unzip findutils iputils-ping grep
+
+# required by isorespin
+RUN apt-get install -y bc mount genisoimage dosfstools squashfs-tools rsync unzip wget findutils xorriso
 
 # Download isorespin script
 RUN wget -O isorespin.sh "https://drive.google.com/uc?export=download&id=0B99O3A0dDe67S053UE8zN3NwM2c"

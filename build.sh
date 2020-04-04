@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 ISOFILE=$1
 KERNEL=$2
 KERNELVERSION=$3
@@ -130,7 +132,7 @@ if [ "$COMPATIBILITY" == "xenialxerus" ]; then
 	INPUTFOLDER=""
 fi
 
-echo "isorespin.sh -i $INPUTFOLDER$ISOFILE"
+# "isorespin.sh -i $INPUTFOLDER$ISOFILE"
 
 addrepos=""
 addrepos+="ppa:daniruiz/flat-remix "
@@ -147,7 +149,7 @@ addrepos+="ppa:ubuntuhandbook1/apps "
 addrepos+="ppa:lyzardking/ubuntu-make "
 addrepos+="ppa:mystic-mirage/pycharm "
 
-./isorespin.sh -i "$INPUTFOLDER""$ISOFILE" \
+/docker-input/isorespin.sh -i "$INPUTFOLDER""$ISOFILE" \
 	$KERNELARGS \
 	-r "ppa:graphics-drivers/ppa" \
 	-r "ppa:daniruiz/flat-remix" \
