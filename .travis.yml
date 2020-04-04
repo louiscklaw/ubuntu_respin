@@ -24,7 +24,7 @@ services:
 
 before_install:
   - docker --version
-  - bash ./docker-build-image.sh
+  - bash ./scripts/docker-build-image.sh
 
 script:
   - bash ./scripts/build_all.sh
