@@ -9,6 +9,7 @@ verify_ssl = true
 slackclient = "*"
 fabric3 = "*"
 ffsend = "*"
+gupload = "*"
 
 [requires]
 python_version = "3.6"
