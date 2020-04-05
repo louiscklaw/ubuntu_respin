@@ -7,3 +7,5 @@ origin/*
 isorespin/*
 .vscode
 *tpl
+
+**/*.json
