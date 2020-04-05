@@ -40,17 +40,16 @@ jobs:
 
       script:
         - bash ./scripts/build_all.sh
-        if: branch = master
-            - touch $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
-            - ls -lh $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
-            - cd $TRAVIS_BUILD_DIR/_utils
-            - sudo apt update
-            - sudo apt install -y p7zip-full curl
-            - sudo apt install -y python3 python3-pip python3-dev python3-wheel python3-setuptools
-            - pip3 install --user pipenv
-            - pipenv sync
-            - pipenv run gupload --to 10dvhpYObvGfnr0-RXlQIQHs9sI-451Ru -f linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
-            - cd ..
+        - touch $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
+        - ls -lh $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
+        - cd $TRAVIS_BUILD_DIR/_utils
+        - sudo apt update
+        - sudo apt install -y p7zip-full curl
+        - sudo apt install -y python3 python3-pip python3-dev python3-wheel python3-setuptools
+        - pip3 install --user pipenv
+        - pipenv sync
+        - pipenv run gupload --to 10dvhpYObvGfnr0-RXlQIQHs9sI-451Ru -f linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
+        - cd ..
 
 after_success:
   - id
