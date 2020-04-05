@@ -20,6 +20,7 @@ target_filename = sys.argv[1]
 zip_filename = os.path.basename(target_filename)+'.7z'
 
 zip_command = ['7za', '-p1233211234567', 'a', zip_filename, target_filename, '-mx=9']
+print(zip_command)
 upload_command = ['curl','-v','--dump-header','--upload-file', zip_filename,f'https://transfer.sh/{zip_filename}']
 
 zip_command_result = subprocess.check_output(zip_command)
