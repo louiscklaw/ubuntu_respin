@@ -1,5 +1,6 @@
 #!/usr/env/python
 import os,sys, subprocess
+import slack
 
 SLACK_TOKEN = os.environ['SLACK_TOKEN']
 
