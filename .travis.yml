@@ -31,7 +31,8 @@ jobs:
     - stage: Build
       name: "build image"
       script:
-        - bash ./scripts/build_all.sh | tee build.log
+        # - bash ./scripts/build_all.sh | tee build.log
+        - touch $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         # - cd ./_utils
         # - sudo apt update
         # - sudo apt install -y p7zip-full curl
