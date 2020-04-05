@@ -2,6 +2,9 @@
 
 # DELL XPS 15 9560 Ubuntu Respin
 
+### travis build
+https://travis-ci.com/github/louiscklaw/ubuntu_respin
+
 - Master branch
 [![Build Status](https://travis-ci.com/louiscklaw/ubuntu_respin.svg?branch=master)](https://travis-ci.com/louiscklaw/ubuntu_respin)
 
