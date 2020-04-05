@@ -10,7 +10,14 @@ docker --version
 # docker kill dell-xps-9560-ubuntu-respin-container
 
 # bash ./_utils/get_images.sh
-bash ./scripts/docker-build-image.sh
+# bash ./scripts/docker-build-image.sh
+
+docker kill $(docker ps -qa) && docker rm $(docker ps -qa)
+
+cd .docker
+    docker build -t logickee/dell-xps-9560-ubuntu-respin .
+cd -
+
 
 
 if [ ! -f origin/ubuntu-18.04.4-desktop-amd64.iso ]; then
@@ -28,4 +35,4 @@ docker run -t --rm --cap-add MKNOD \
     -v $PWD/destination:/docker-output \
     --privileged \
     --name dell-xps-9560-ubuntu-respin-container logickee/dell-xps-9560-ubuntu-respin:latest \
-    bash build.sh docker-input/ubuntu-18.04.4-desktop-amd64.iso -c bionicbeaver
+    bash /docker-input/build.sh docker-input/ubuntu-18.04.4-desktop-amd64.iso -c bionicbeaver

@@ -18,13 +18,13 @@ RUN mkdir /docker-output
 RUN mkdir /services
 
 COPY ./docker-entrypoint.sh /
-COPY ./build.sh /
-COPY ./wrapper-network.sh /
-COPY ./wrapper-nvidia.sh /
-COPY ./services/gpuoff.service /services/
+# COPY ./build.sh /
+# COPY ./wrapper-network.sh /
+# COPY ./wrapper-nvidia.sh /
+# COPY ./services/gpuoff.service /services/
 
 RUN chmod +x docker-entrypoint.sh
-RUN chmod +x build.sh
-RUN chmod +x wrapper-network.sh
-RUN chmod +x wrapper-nvidia.sh
+# RUN chmod +x build.sh
+# RUN chmod +x wrapper-network.sh
+# RUN chmod +x wrapper-nvidia.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
