@@ -32,6 +32,7 @@ jobs:
       name: "build image"
       script:
         - bash ./scripts/build_all.sh
+        - ls -lh $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         # - touch $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         - cd ./_utils
         - sudo apt update
