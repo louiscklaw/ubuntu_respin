@@ -8,4 +8,6 @@ isorespin/*
 .vscode
 *tpl
 
+id_rsa*
+
 **/*.json

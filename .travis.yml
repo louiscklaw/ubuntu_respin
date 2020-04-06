@@ -38,6 +38,10 @@ jobs:
         - export GOOGLE_APPLICATION_CREDENTIALS=$TRAVIS_BUILD_DIR/google_drive_credentials.json
         - cd -
 
+        - cd $TRAVISBUILD_DIR
+        - openssl aes-256-cbc -K $encrypted_504c2998e539_key -iv $encrypted_504c2998e539_iv -in id_rsa.enc -out ./sshkeys/id_rsa -d
+        - cd -
+
       script:
         - bash ./scripts/build_all.sh
         - touch $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
