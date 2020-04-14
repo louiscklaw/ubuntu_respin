@@ -56,8 +56,8 @@ jobs:
         - cd ..
 
 after_success:
-  - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success_test.sh
-  - bash merge_if_success_test.sh | tee merge.log
+  - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
+  - bash merge_if_success.sh | tee merge.log
 
 after_failure:
   - tail -500 build.log
