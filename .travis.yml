@@ -43,7 +43,7 @@ jobs:
       #   - cd -
 
       script:
-        - bash ./scripts/build_all.sh
+        - bash scripts/build_all.sh
         - touch $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         - ls -lh $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         - cd $TRAVIS_BUILD_DIR/_utils
