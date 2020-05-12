@@ -30,6 +30,8 @@ fi
 
 cp ./scripts/build_all.sh ./scripts/isorespin.sh ./origin/
 
+ls -l ./origin
+
 docker run -t --rm --cap-add MKNOD \
     -v $PWD/origin:/docker-input \
     -v $PWD/destination:/docker-output \
