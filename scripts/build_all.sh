@@ -14,10 +14,9 @@ docker --version
 
 docker kill $(docker ps -qa) && docker rm $(docker ps -qa)
 
-cd .docker
-    docker build -t logickee/dell-xps-9560-ubuntu-respin .
-cd -
-
+# cd .docker
+#     docker build -t logickee/dell-xps-9560-ubuntu-respin .
+# cd -
 
 
 if [ ! -f origin/ubuntu-18.04.4-desktop-amd64.iso ]; then
