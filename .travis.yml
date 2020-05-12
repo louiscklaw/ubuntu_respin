@@ -55,9 +55,12 @@ jobs:
         # - pipenv run gupload --to 10dvhpYObvGfnr0-RXlQIQHs9sI-451Ru -f linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         - cd ..
 
-after_success:
-  - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-  - bash merge_if_success.sh | tee merge.log
+    - stage: Build
+      name: "build image"
+
+      script:
+      - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
+      - bash merge_if_success.sh | tee merge.log
 
 after_failure:
   - tail -500 build.log
