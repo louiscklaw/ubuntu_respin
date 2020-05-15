@@ -55,23 +55,6 @@ jobs:
         # - pipenv run gupload --to 10dvhpYObvGfnr0-RXlQIQHs9sI-451Ru -f linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso $TRAVIS_BUILD_DIR/destination/linuxium-v5.6-ubuntu-18.04.4-desktop-amd64.iso
         - cd ..
 
-    - stage: Build
-      name: "build image"
-
-      script:
-      - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-      - bash merge_if_success.sh | tee merge.log
-
-after_failure:
-  - tail -500 build.log
-
-notifications:
-  slack:
-    secure: n+I8Lgv8l6oal0+qE4nIwtaSXm0Y1i05MwoaA/PF6qUDPHwjZ+rHrggSCiWaQPMRN3MqnbghEptPDkDpbTwMAzv9+k3T+z14CC1hvudevvQxCy7dSlOzd6Hn2Kr5N+pRL0kk+cGNDNRtURaiWdYweo3IueIs87qIftxjxthuGsLj9Gn63v8VaDQ6wiERcvMoOPiwMl1mBU8QHLB9dyTV/oCxc15HjbQ1AoM4Z39NKiXi0HATR0cr4IXTfv9nyJiufvw1mz7GLM+DCmhMQcCUr61rq7WdpWCrV8L7Sy6n1P3YYWw0G6iRocs10LHBZpzdLrSREfEg0AKVYLJc3Mz/xz1JjWrcSEWzJOOCfrGX2oNcdb9sdkUsrs4LkhLjZyREqrsgl0q0ABTFcd3y1hHkAxkQiGGOLthOmnKbPqBjmvohwa5Aci/ysb76mzohvD/57aBdEqCjC4FlCGOplLdVPmCciyitrRWWFomLF50Ut2aVmJ4giihctIrs6Ffz7kOmTfTIsukRnT+r7r/0H8CcQAehmRTCD0K2Wmv0YR/jsYhLnGCoNcnEf62IW2sjrzm0Li9aavTclxvPhdEGXNuaESbD7gQQcLtpgB7CvGeuRzS7zlYVsC2WwMK3pLJbN+yfGgfbU4hGlnw//xEqRCKuzOhYeQYYn5ro9kV9qEsjRSM=
-env:
-  global:
-    #GITHUB_TOKEN
-    - secure: Dap+V3GJ+nr3DtKop1bQQ2yy7kavQYSZfHZ+B+igklA/2Ws4+D3Y8QE1Tq3oZpip4TWYpr4PwPsZ3007upgx1CUy0sleZcNYmrl2IHvdGnknyv0Mg2ATzXC/ePJsVvKcyeKJXzLlmg/14MfKPvCqUwZUbsgiEZrdlwJE7NT+QLuiUkEeqA82gFP1tmuTMNQalpBOdX3aKA8KB1rVQS+gdTSUxQM8RIEd0IvuLFsg6FJM05aUN1JIWuax0N22hhbf6ESFK46KIK6qKu5COeDAuDcjhNTQkTfejnCOV6z2w+sUojr5Hkcy5qCxtqhvo0DPzzHaO2p/uRxd6Q29uhcX+kmHtbJQskXhMHMDNN6snZOLR1HPNUG+8/OB0bm2tJ7+Ys2SJYW52E/8y7QejVuSeJK6iGxB/FEHe63tbusWl2osMixRYIrXqb7FCIjoGTKcQUC6r6v6FFMAbg5elmzRwcbfWeZoBxSVQPi+jkW1on3aH5j6D5DWGXwHKAcWDUb98+CbLdgwfaMtz/2gd6m8IlCZxXvkiqXxEpFEtxAfjDwSl5XHx5pLiUP2CS/1tjo+wRpJ54kpuekgomFn7QSKioLuKOCB0awJ5g2s8PyntzG0mKBTLl/5Q9ICLY9OkPhuO2lembQt84QyvnM2ku2vskuZgFIKb3aXEkW5Lts7iSo=
-
-    # SLACK_TOKEN
-    - secure: AafI0dQOf7oVq5hg/qFEAZn0DvjWnyajNvtu3wArr3u0m1QjSHQPCdva2d45t2kqwdtJwTxprLaAjxpZzICDP8q3AfD35Vp2Zjp6tFC2WlQnk0tilVCi6XLyts6MaFmqSeB2Ue5IdRq9Vn3Vx/rOGscqwImstto8jxCf59hHQCkm6l/OpaKfpzKknDJtUK/Kva4Igq+vY9yXwzgHERsSA2pNxLJwiNUt3T0N2sHBLd/75brrZo1UHmPm/ZnABLgU+lrBbU9G0Hws4coA3uDKZireD9XiP5BUi6p6PMKLF8ImC0n75Jfismrmv8Gc25zh1etyffofzocwcJA5UihNxErXnPzwncz8u59iVWT0gmOUNUHDMDUMoy88KUr0PCf5V7ecUodiBbTfXgFPmNkmHgZ5tef0D9VH0fw3KmGvEPVVyHdL9nL/KqF7df/RWLFAEiyFN079/pDR1Vfq71iX8xEgLuiLVnVY+ZXeQevYlokYmwIRYKmzducvPbMKhfIovrF7nR2jQtJBcdMUdFirV7XWCHdKt0IJI+HAIBdEQuLvkZaBqYRFFvOD5Tz50K8G5vtRVwlvruEl2wEgWUE5lszoPiOnEagneXGFR3ICvcH1oVgwe51cI1ZWnc2/t8g9/6/bzAC/l2JrzCaaH8yqHa5pjjddA8lNmGQWuGqhrxg=
+stages:
+  - Build
+  - Merge
